@@ -5,55 +5,55 @@ body, html {
 
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: white;
+  color: #444;
 }
 
-/* Views */
-#landing, #portfolio {
+.sections, section, #landing > .content, .background {
   width: 100%;
   height: 100%;
 }
 
-#landing > .content, .background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
+section {
+  position: relative;
+  overflow: hidden;
 }
 
-#landing > .background {
+#landing {
   background: url(../images/photos/kimmo.jpg);
   background-size: cover;
+  color: #f4f4f4;
 }
 
 /* Dark layer on top of image to make text readable */
 #landing > .content {
-  /*background: rgba(0, 0, 0, 0.4);*/
-}
-
-#landing > .arrow-down {
-
+  background: rgba(0, 0, 0, 0.4);
 }
 
 #landing header {
   font-size: 3em;
   text-align: center;
-  margin-top: 50px;
-}
-
-#portfolio {
-  top: 100%;
-  position: absolute;
+  padding: 50px;
 }
 
 #portfolio > .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #333;
+  background: #eee;
 }
 
 #portfolio header {
-  font-size: 3em;
+  font-size: 7em;
   text-align: center;
+}
+
+#portfolio p {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-style: italic;
 }
 
 .hidden {
@@ -61,8 +61,17 @@ body, html {
   visibility: hidden;
 }
 
-#portfolio img {
-  width: 100%;
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #eee;
+}
+
+.image > img {
+  width: 80%;
+  border: 10px solid white;
 }
 
 
