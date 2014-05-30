@@ -35,6 +35,9 @@ section {
   padding: 50px;
 }
 
+#portfolio {
+}
+
 #portfolio > .content {
   display: flex;
   justify-content: center;
@@ -42,18 +45,37 @@ section {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #eee;
+  color: #eee;
 }
+
+#portfolio .circle {
+  width: 600px;
+  height: 600px;
+  border-radius: 300px;
+
+  border: 1px solid #555;
+  background: #333;
+}
+
+#portfolio .background {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 #portfolio header {
   font-size: 7em;
-  text-align: center;
 }
 
 #portfolio p {
-  margin-top: 20px;
-  font-size: 1.5em;
-  font-style: italic;
+  margin-top: 5px;
+  font-size: 1.7em;
 }
 
 .hidden {
