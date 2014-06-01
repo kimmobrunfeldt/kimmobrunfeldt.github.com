@@ -27,9 +27,38 @@ var Portfolio = (function($) {
         $('body').panelSnap(options);
     }
 
+    function initEventHandlers() {
+        $('.image-grid').magnificPopup({
+            delegate: '.image',
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    }
+
+    function renderThumbnails() {
+        var imageHtmls = [];
+        return $.get('/api/pictures.json').done(function(response) {
+            _.each(response, function(picture) {
+                var html = '<a class="image" href="' + picture.picture + '">';
+                html += '<img';
+                html += ' src="' + picture.thumbnail + '">';
+                html += '</a>';
+
+                imageHtmls.push(html);
+            });
+
+            $('.image-grid').html(imageHtmls.join('\n'));
+
+        }).fail(function() {
+            $('.image-grid').html('<p>No images</p>');
+        });
+    }
+
     function init() {
-        //setTimeout(animateBlurBackground, 500);
         initPanelSnap();
+        renderThumbnails().then(initEventHandlers);
     }
 
     return {
