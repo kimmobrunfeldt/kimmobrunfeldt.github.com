@@ -1,13 +1,10 @@
 body, html {
   width: 100%;
   height: 100%;
-  min-width: 600px;
-  min-height: 600px;
 
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
   color: #444;
-
 }
 
 a:visited {
@@ -23,6 +20,7 @@ a {
 .sections, section, #landing > .content, .background {
   width: 100%;
   height: 100%;
+  min-height: 620px;
 }
 
 section {
@@ -41,11 +39,8 @@ section {
 }
 
 #portfolio .circle {
-  width: 600px;
-  height: 600px;
-  border-radius: 300px;
-
-  border: 1px solid #555;
+  width: 100%;
+  height: 100%;
   background: #333;
 }
 
@@ -69,14 +64,6 @@ section {
   font-size: 1.7em;
 }
 
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.image-grid {
-}
-
 .image-grid > .image > img:hover {
   cursor: pointer;
   opacity: 0.85;
@@ -95,5 +82,32 @@ section {
     -webkit-transition: opacity .5s ease-out;
     -o-transition: opacity .5s ease-out;
 }
+
+/* Media queries */
+
+@media all and (min-width: 600px) {
+  #portfolio .circle {
+    width: 600px;
+    height: 600px;
+    min-height: 600px;
+    border-radius: 300px;
+
+    border: 1px solid #555;
+    background: #333;
+  }
+}
+
+@media all and (max-width: 600px) {
+  #portfolio {
+    font-size: 0.8em;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #portfolio {
+    font-size: 0.5em;
+  }
+}
+
 
 
