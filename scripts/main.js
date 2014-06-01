@@ -14,7 +14,7 @@ var Portfolio = (function($) {
         var imageHtmls = [];
         return $.get('/api/pictures.json').done(function(response) {
             _.each(response, function(picture) {
-                var html = '<a class="image" href="' + picture.picture + '">';
+                var html = '<a class="image opacity-hover" href="' + picture.picture + '">';
                 html += '<img';
                 html += ' src="' + picture.thumbnail + '">';
                 html += '</a>';
