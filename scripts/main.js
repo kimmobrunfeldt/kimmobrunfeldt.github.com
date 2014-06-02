@@ -8,6 +8,12 @@ var Portfolio = (function($) {
                 enabled: true
             }
         });
+
+        $('#portfolio .scroll').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 800);
+        });
     }
 
     function renderThumbnails() {
@@ -29,8 +35,37 @@ var Portfolio = (function($) {
         });
     }
 
+    function animateScrollButton() {
+
+        move.defaults = {
+            duration: 600
+        };
+
+        // Initial animation for "scroll down" - button
+        setTimeout(function() {
+
+            move('#portfolio .scroll')
+                .rotate(360)
+                .set('bottom', 0)
+                .set('right', 0)
+                .set('opacity', 0.75)
+                .then()
+                    .set('opacity', 1)
+                    .pop()
+                .end(function() {
+                    $('#portfolio .scroll')
+                        .removeAttr('style')
+                        .addClass('opacity-hover')
+                        .css('z-index', 2)
+                        .css('bottom', 0)
+                        .css('right', 0);
+                });
+        }, 500);
+    }
+
     function init() {
         renderThumbnails().then(initEventHandlers);
+        animateScrollButton();
     }
 
     return {
