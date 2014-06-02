@@ -93,7 +93,6 @@ var Portfolio = (function($) {
 
         renderThumbnails().then(initEventHandlers);
 
-        move('#portfolio .scroll').rotate(360).end();
         if ($(window).width() > 600) {
             animateScrollButtonLargeScreen();
         } else {

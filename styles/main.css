@@ -60,6 +60,7 @@ section {
 }
 
 #portfolio .scroll {
+  z-index: 2;
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -157,7 +158,6 @@ section {
   #portfolio .scroll {
     bottom: 0;
     right: 0;
-    z-index: 2;
   }
 }
 
