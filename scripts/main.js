@@ -64,6 +64,11 @@ var Portfolio = (function($) {
     }
 
     function init() {
+        if (window.location.protocol == "https:") {
+            window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+        }
+
+
         renderThumbnails().then(initEventHandlers);
         animateScrollButton();
     }
