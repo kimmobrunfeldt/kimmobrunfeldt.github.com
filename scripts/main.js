@@ -18,7 +18,7 @@ var Portfolio = (function($) {
 
     function renderThumbnails() {
         var imageHtmls = [];
-        return $.get('/api/pictures.json').done(function(response) {
+        return $.get('api/pictures.json').done(function(response) {
             _.each(response, function(picture) {
                 var html = '<a class="image opacity-hover" href="' + picture.picture + '">';
                 html += '<img';
@@ -64,11 +64,6 @@ var Portfolio = (function($) {
     }
 
     function init() {
-        if (window.location.protocol == "https:") {
-            window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-        }
-
-
         renderThumbnails().then(initEventHandlers);
         animateScrollButton();
     }
