@@ -35,20 +35,22 @@ var Portfolio = (function($) {
         });
     }
 
-    function animateScrollButton() {
-
-        move.defaults = {
-            duration: 600
-        };
-
+    function animateScrollButtonLargeScreen() {
         // Initial animation for "scroll down" - button
+
+        $('#portfolio .scroll')
+        .css('z-index', -1)
+        .css('bottom', 10)
+        .css('right', 300)
+        .css('opacity', 0.75)
+        .removeClass('hidden');
+
         setTimeout(function() {
 
             move('#portfolio .scroll')
                 .rotate(360)
                 .set('bottom', 0)
                 .set('right', 0)
-                .set('opacity', 0.75)
                 .then()
                     .set('opacity', 1)
                     .pop()
@@ -57,15 +59,41 @@ var Portfolio = (function($) {
                         .removeAttr('style')
                         .addClass('opacity-hover')
                         .css('z-index', 2)
-                        .css('bottom', 0)
-                        .css('right', 0);
+                });
+        }, 500);
+    }
+
+    function animateScrollButtonNarrowScreen() {
+        $('#portfolio .scroll')
+        .removeClass('hidden');
+
+        setTimeout(function() {
+            move('#portfolio .scroll')
+                .rotate(360)
+                .end(function() {
+                    $('#portfolio .scroll')
+                        .removeAttr('style')
+                        .addClass('opacity-hover')
+                        .css('z-index', 2)
                 });
         }, 500);
     }
 
     function init() {
+        move.defaults = {
+            duration: 600
+        };
+
         renderThumbnails().then(initEventHandlers);
-        animateScrollButton();
+
+        if ($(window).width() > 600) {
+            animateScrollButtonLargeScreen();
+        } else {
+            animateScrollButtonNarrowScreen();
+        }
+
+
+
     }
 
     return {

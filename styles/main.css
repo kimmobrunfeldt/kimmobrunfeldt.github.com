@@ -16,13 +16,6 @@ header, p {
   user-select: none;
 }
 
-
-.arrow-down {
-  width: 500px;
-  height: 500px;
-  background: url(../images/arrow-down.png);
-}
-
 a:visited {
   color: white;
 }
@@ -132,20 +125,22 @@ section {
   }
 
   #portfolio .scroll {
-    bottom: 10px;
-    right: 300px;
-    z-index: -1;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
   }
 }
 
 @media all and (max-width: 600px) {
   #portfolio {
+    min-height: 300px;
     font-size: 0.8em;
   }
 }
 
 @media all and (max-width: 400px) {
   #portfolio {
+    min-height: 300px;
     font-size: 0.5em;
   }
 }
@@ -159,4 +154,9 @@ section {
 
 .opacity-hover:hover {
   opacity: 0.85;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
 }
