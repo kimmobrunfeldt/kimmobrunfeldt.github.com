@@ -40,6 +40,11 @@ var Portfolio = (function($) {
 
             $('.image-grid').html(imageHtmls.join('\n'));
 
+            // Call retina.js API for dynamically added images
+            $('.image-grid img').each(function() {
+                new RetinaImage(this);
+            });
+
         }).fail(function() {
             $('.image-grid').html('<p>No images</p>');
         });
