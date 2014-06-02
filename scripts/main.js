@@ -42,7 +42,6 @@ var Portfolio = (function($) {
         .css('z-index', -1)
         .css('bottom', 10)
         .css('right', 300)
-        .css('opacity', 0.75)
         .removeClass('hidden');
 
         setTimeout(function() {
@@ -51,14 +50,11 @@ var Portfolio = (function($) {
                 .rotate(360)
                 .set('bottom', 0)
                 .set('right', 0)
-                .then()
-                    .set('opacity', 1)
-                    .pop()
                 .end(function() {
                     $('#portfolio .scroll')
                         .removeAttr('style')
                         .addClass('opacity-hover')
-                        .css('z-index', 2)
+                        .css('z-index', 2);
                 });
         }, 500);
     }
