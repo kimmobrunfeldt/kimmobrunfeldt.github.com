@@ -3,9 +3,18 @@ var Portfolio = (function($) {
     function initEventHandlers() {
         $('.image-grid').magnificPopup({
             delegate: '.image',
-            type: 'image',
             gallery: {
                 enabled: true
+            },
+            callbacks: {
+                elementParse: function(item) {
+                    console.log(item.src)
+                    if (_.contains(item.src, 'vimeo')) {
+                        item.type = 'iframe';
+                    } else {
+                        item.type = 'image';
+                    }
+                }
             }
         });
 
@@ -18,11 +27,11 @@ var Portfolio = (function($) {
 
     function renderThumbnails() {
         var imageHtmls = [];
-        return $.get('api/pictures.json').done(function(response) {
-            _.each(response, function(picture) {
-                var html = '<a class="image opacity-hover" href="' + picture.picture + '">';
+        return $.get('api/medias.json').done(function(response) {
+            _.each(response, function(media) {
+                var html = '<a class="image opacity-hover" href="' + media.url + '">';
                 html += '<img';
-                html += ' src="' + picture.thumbnail + '">';
+                html += ' src="' + media.thumbnail + '">';
                 html += '</a>';
 
                 imageHtmls.push(html);
