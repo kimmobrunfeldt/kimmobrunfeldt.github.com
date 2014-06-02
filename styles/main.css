@@ -153,18 +153,18 @@ section {
   }
 
   .images header {
-    font-size: 2.5em;
+    font-size: 2.7em;
   }
 }
 
 @media all and (max-width: 400px) {
   #portfolio {
     min-height: 300px;
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 
   .images header {
-    font-size: 2em;
+    font-size: 2.3em;
   }
 }
 
