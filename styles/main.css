@@ -33,11 +33,11 @@ a {
 
 section {
   position: relative;
-  overflow: hidden;
 }
 
 #portfolio {
   min-height: 620px;
+  height: 100%;
 }
 
 #portfolio > .content {
@@ -93,20 +93,35 @@ section {
   font-size: 1.7em;
 }
 
+#portfolio .author {
+  opacity: 0;
+}
+
+.images header {
+  font-size: 3em;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+.image-grid {
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+}
+
 .image-grid > .image > img:hover {
   cursor: pointer;
 }
 
 .image-grid > .image > img {
-   width: 150px;
-   height: 150px;
-   -webkit-border-radius: 150px;
-   -moz-border-radius: 150px;
-   border-radius: 150px;
-
-   margin-left: 20px;
-   margin-top: 20px;
-   border: 5px solid #d6d6d6;
+  display:inline-block;
+  margin: 20px 20px 0 20px;
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border-radius: 150px;
+  border: 5px solid #d6d6d6;
 }
 
 /* Media queries */
@@ -136,12 +151,20 @@ section {
     min-height: 300px;
     font-size: 0.8em;
   }
+
+  .images header {
+    font-size: 2.5em;
+  }
 }
 
 @media all and (max-width: 400px) {
   #portfolio {
     min-height: 300px;
     font-size: 0.5em;
+  }
+
+  .images header {
+    font-size: 2em;
   }
 }
 
