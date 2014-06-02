@@ -10,7 +10,6 @@ var Portfolio = (function($) {
             },
             callbacks: {
                 elementParse: function(item) {
-                    console.log(item.src)
                     if (_.contains(item.src, 'vimeo')) {
                         item.type = 'iframe';
                     } else {
@@ -32,8 +31,8 @@ var Portfolio = (function($) {
         return $.get('api/medias.json').done(function(response) {
             _.each(response, function(media) {
                 var html = '<a class="image opacity-hover" href="' + media.url + '">';
-                html += '<img';
-                html += ' src="' + media.thumbnail + '">';
+                html += '<div class="img-border"><img';
+                html += ' src="' + media.thumbnail + '"></div>';
                 html += '</a>';
 
                 imageHtmls.push(html);
@@ -94,6 +93,7 @@ var Portfolio = (function($) {
 
         renderThumbnails().then(initEventHandlers);
 
+        move('#portfolio .scroll').rotate(360).end();
         if ($(window).width() > 600) {
             animateScrollButtonLargeScreen();
         } else {
@@ -101,7 +101,6 @@ var Portfolio = (function($) {
         }
 
         setTimeout(function() {
-            console.log('animate')
             $('#portfolio .author').addClass('animated flipInY');
         }, 400);
     }
