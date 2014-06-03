@@ -95,7 +95,7 @@ var Portfolio = (function($) {
     }
 
     function animate() {
-        if ($(window).width() > 600) {
+        if ($(window).width() > 660) {
             animateScrollButtonLargeScreen();
         } else {
             animateScrollButtonNarrowScreen();
