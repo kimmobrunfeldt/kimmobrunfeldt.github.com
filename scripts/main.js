@@ -21,7 +21,7 @@ var Portfolio = (function($) {
 
         $('#portfolio .scroll').on('click', function() {
             $('html, body').animate({
-                scrollTop: $(window).height()
+                scrollTop: $('#portfolio').outerHeight()
             }, 800);
         });
     }
@@ -86,7 +86,7 @@ var Portfolio = (function($) {
                     $('#portfolio .scroll')
                         .removeAttr('style')
                         .addClass('opacity-hover')
-                        .css('z-index', 2)
+                        .css('z-index', 2);
                 });
         }, ANIMATE_SCROLL_BUTTON_DURATION);
     }
