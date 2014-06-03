@@ -24,7 +24,7 @@ var Portfolio = (function($) {
 
         $('#portfolio .scroll').on('click', function() {
             $('html, body').animate({
-                scrollTop: $('#portfolio').outerHeight()
+                scrollTop: $('#images').offset().top + 5
             }, 800);
         });
     }
@@ -94,13 +94,7 @@ var Portfolio = (function($) {
         }, ANIMATE_SCROLL_BUTTON_DURATION);
     }
 
-    function init() {
-        move.defaults = {
-            duration: 600
-        };
-
-        renderThumbnails().then(initEventHandlers);
-
+    function animate() {
         if ($(window).width() > 600) {
             animateScrollButtonLargeScreen();
         } else {
@@ -110,6 +104,19 @@ var Portfolio = (function($) {
         setTimeout(function() {
             $('#portfolio .author').addClass('animated flipInY');
         }, 400);
+
+        setTimeout(function() {
+            $('#portfolio .link-list i').addClass('animated swing');
+        }, ANIMATE_SCROLL_BUTTON_DURATION);
+    }
+
+    function init() {
+        move.defaults = {
+            duration: 600
+        };
+
+        renderThumbnails().then(initEventHandlers);
+        animate();
     }
 
     return {
