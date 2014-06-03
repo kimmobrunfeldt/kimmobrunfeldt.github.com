@@ -8,6 +8,9 @@ var Portfolio = (function($) {
             gallery: {
                 enabled: true
             },
+            fixedContentPos: true,
+            fixedBgPos: true,
+            overflowY: 'scroll',
             callbacks: {
                 elementParse: function(item) {
                     if (_.contains(item.src, 'vimeo')) {
