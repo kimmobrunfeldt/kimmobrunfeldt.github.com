@@ -21,11 +21,11 @@ header, p {
   user-select: none;
 }
 
-a:visited {
+#landing a:visited {
   color: white;
 }
 
-a {
+#landing a {
   color: white;
   font-style: italic;
   text-decoration: underline;
@@ -40,12 +40,14 @@ section {
   position: relative;
 }
 
-#portfolio {
+/* Landing section */
+
+#landing {
   min-height: 620px;
   height: 100%;
 }
 
-#portfolio > .content {
+#landing > .content {
   position: absolute;
   display: table;
   width: 100%;
@@ -53,40 +55,40 @@ section {
   color: white;
 }
 
-#portfolio .social-links {
+#landing .social-links {
   position: absolute;
   top: 20px;
   right: 20px;
   display: table;
 }
 
-#portfolio .link-list {
+#landing .link-list {
   display: table-cell;
   vertical-align: middle;
 }
 
-#portfolio .link-list li {
+#landing .link-list li {
   display: inline;
 }
 
-#portfolio .link-list i {
+#landing .link-list i {
   font-size: 40px;
   color: #888;
   margin-left: 5px;
 }
 
-#portfolio .circle {
+#landing .circle {
   width: 100%;
   height: 100%;
   background: #333;
   position: relative;
 }
 
-#portfolio .scroll:hover {
+#landing .scroll:hover {
   cursor: pointer;
 }
 
-#portfolio .scroll {
+#landing .scroll {
   z-index: 2;
   position: absolute;
   bottom: 20px;
@@ -99,42 +101,80 @@ section {
   background: #888;
 }
 
-#portfolio .background {
+#landing .background {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-#portfolio .logo-author {
+#landing .logo-author {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
 }
 
-#portfolio header {
+#landing header {
   font-size: 7em;
 }
 
-#portfolio p {
+#landing p {
   margin-top: 5px;
   font-size: 1.7em;
 }
 
-#portfolio .author {
+#landing .author {
   font-style: italic;
   opacity: 0;
 }
 
+/* Content section */
+
+#images a:visited {
+  color: #999;
+}
+
+#images a {
+  color: #999;
+  font-size: 1.4em;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#images > .content {
+  padding: 40px 50px 50px 20px;
+}
+
 #images header {
   font-size: 3em;
-  padding-left: 20px;
-  padding-top: 50px;
+}
+
+#images h2 {
+  display: inline-block;
+  font-size: 1.6em;
+  margin-left: 3px;
+}
+
+#images .right {
+  float: right;
+  text-align: right;
+}
+
+.album {
+  margin-top: 65px;
+}
+
+.album-link {
+  margin-left: 15px;
+}
+
+.album-header {
+  width: 100%;
 }
 
 .image-grid {
   width: 100%;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .image-grid > .image img:hover {
@@ -168,7 +208,7 @@ section {
 
 /* Large screens */
 @media all and (min-width: 660px) {
-  #portfolio .circle {
+  #landing .circle {
     width: 600px;
     height: 600px;
     top: 50%;
@@ -185,24 +225,24 @@ section {
     background: #333;
   }
 
-  #portfolio .scroll {
+  #landing .scroll {
     bottom: 0;
     right: 0;
     background: #666;
   }
-  #portfolio .link-list i {
+  #landing .link-list i {
     color: #666;
   }
 }
 
 /* Narrow screens */
 @media all and (max-width: 660px) {
-  #portfolio {
+  #landing {
     min-height: 300px;
     font-size: 0.8em;
   }
 
-  #portfolio .scroll {
+  #landing .scroll {
     width: 50px;
     height: 50px;
     -webkit-border-radius: 50px;
@@ -217,7 +257,7 @@ section {
 
 /* Narrower screens */
 @media all and (max-width: 400px) {
-  #portfolio {
+  #landing {
     min-height: 300px;
     font-size: 0.6em;
   }
@@ -226,6 +266,8 @@ section {
     font-size: 2.3em;
   }
 }
+
+/* Generic styles */
 
 .opacity-hover {
   transition: opacity .5s ease-out;

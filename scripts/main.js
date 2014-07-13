@@ -22,7 +22,7 @@ var Portfolio = (function($) {
             }
         });
 
-        $('#portfolio .scroll').on('click', function() {
+        $('#landing .scroll').on('click', function() {
             $('html, body').animate({
                 scrollTop: $('#images').offset().top + 5
             }, 800);
@@ -30,18 +30,9 @@ var Portfolio = (function($) {
     }
 
     function renderThumbnails() {
-        var imageHtmls = [];
-        return $.get('api/medias.json').done(function(response) {
-            _.each(response, function(media) {
-                var html = '<a class="image opacity-hover" href="' + media.url + '">';
-                html += '<div class="img-border"><img';
-                html += ' src="' + media.thumbnail + '"></div>';
-                html += '</a>';
+        return $.get('api/content.json').done(function(response) {
 
-                imageHtmls.push(html);
-            });
-
-            $('.image-grid').html(imageHtmls.join('\n'));
+            _.each(response, renderAlbumThumbnails);
 
             // Call retina.js API for dynamically added images
             $('.image-grid img').each(function() {
@@ -53,10 +44,25 @@ var Portfolio = (function($) {
         });
     }
 
+    function renderAlbumThumbnails(album) {
+        var imageHtmls = [];
+
+        _.each(album.content, function(media) {
+            var html = '<a class="image opacity-hover" href="' + media.url + '">';
+            html += '<div class="img-border"><img';
+            html += ' src="' + media.thumbnail + '"></div>';
+            html += '</a>';
+
+            imageHtmls.push(html);
+        });
+
+        $('#album-' + album.id + ' .image-grid').html(imageHtmls.join('\n'));
+    }
+
     function animateScrollButtonLargeScreen() {
         // Initial animation for "scroll down" - button
 
-        $('#portfolio .scroll')
+        $('#landing .scroll')
         .css('z-index', -1)
         .css('bottom', 10)
         .css('right', 300)
@@ -64,12 +70,12 @@ var Portfolio = (function($) {
 
         setTimeout(function() {
 
-            move('#portfolio .scroll')
+            move('#landing .scroll')
                 .rotate(360)
                 .set('bottom', 0)
                 .set('right', 0)
                 .end(function() {
-                    $('#portfolio .scroll')
+                    $('#landing .scroll')
                         .removeAttr('style')
                         .addClass('opacity-hover')
                         .css('z-index', 2);
@@ -79,14 +85,14 @@ var Portfolio = (function($) {
     }
 
     function animateScrollButtonNarrowScreen() {
-        $('#portfolio .scroll')
+        $('#landing .scroll')
         .removeClass('hidden');
 
         setTimeout(function() {
-            move('#portfolio .scroll')
+            move('#landing .scroll')
                 .rotate(360)
                 .end(function() {
-                    $('#portfolio .scroll')
+                    $('#landing .scroll')
                         .removeAttr('style')
                         .addClass('opacity-hover')
                         .css('z-index', 2);
@@ -102,11 +108,11 @@ var Portfolio = (function($) {
         }
 
         setTimeout(function() {
-            $('#portfolio .author').addClass('animated flipInY');
+            $('#landing .author').addClass('animated flipInY');
         }, 400);
 
         setTimeout(function() {
-            $('#portfolio .link-list i').addClass('animated swing');
+            $('#landing .link-list i').addClass('animated swing');
         }, ANIMATE_SCROLL_BUTTON_DURATION);
     }
 
