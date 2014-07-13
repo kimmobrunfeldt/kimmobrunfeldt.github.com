@@ -141,7 +141,7 @@ section {
 }
 
 #images > .content {
-  padding: 40px 50px 50px 20px;
+  padding: 40px 20px 50px 20px;
 }
 
 #images header {
@@ -151,7 +151,6 @@ section {
 #images h2 {
   display: inline-block;
   font-size: 1.6em;
-  margin-left: 3px;
 }
 
 #images .right {
@@ -163,12 +162,14 @@ section {
   margin-top: 65px;
 }
 
-.album-link {
-  margin-left: 15px;
-}
-
 .album-header {
   width: 100%;
+  margin-left: 3px;
+}
+
+.album-header > h2 {
+  margin-right: 15px;
+  margin-bottom: 5px;
 }
 
 .image-grid {
