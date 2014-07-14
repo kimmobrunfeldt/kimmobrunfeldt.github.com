@@ -138,6 +138,7 @@ section {
   font-size: 1.4em;
   text-decoration: underline;
   font-style: italic;
+  white-space: nowrap;
 }
 
 #images > .content {
@@ -173,9 +174,7 @@ section {
 }
 
 .image-grid {
-  width: 100%;
-  text-align: center;
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .image-grid > .image img:hover {
@@ -233,6 +232,15 @@ section {
   }
   #landing .link-list i {
     color: #666;
+  }
+}
+
+/* Image grid */
+@media all and (max-width: 700px) {
+  .image-grid {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 0 0;
   }
 }
 
