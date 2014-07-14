@@ -114,10 +114,6 @@ var Portfolio = (function($) {
         setTimeout(function() {
             $('#landing .author').addClass('animated flipInY');
         }, 400);
-
-        setTimeout(function() {
-            $('#landing .link-list i').addClass('animated swing');
-        }, ANIMATE_SCROLL_BUTTON_DURATION);
     }
 
     function init() {
