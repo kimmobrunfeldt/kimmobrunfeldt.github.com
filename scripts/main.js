@@ -39,8 +39,12 @@ var Portfolio = (function($) {
                 new RetinaImage(this);
             });
 
-        }).fail(function() {
+        }).fail(function errorHandler(jqXhr, textStatus, errorThrown) {
             $('.image-grid').html('<p>No images</p>');
+
+            console.error(jqXhr);
+            console.error(textStatus);
+            throw new Error(errorThrown);
         });
     }
 
