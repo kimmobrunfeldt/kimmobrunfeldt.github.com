@@ -135,5 +135,10 @@ var Portfolio = (function($) {
 // On load
 $(function() {
     Portfolio.init();
-    console.debug('The code is ok-ish.. Also check https://github.com/kimmobrunfeldt')
+
+    setTimeout(function hello() {
+        console.debug('\n\nHi!\n');
+        console.debug('The code is ok-ish.. Also check https://github.com/kimmobrunfeldt');
+    }, 2000);
+
 });
