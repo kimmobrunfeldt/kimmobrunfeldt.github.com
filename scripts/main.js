@@ -53,7 +53,7 @@ var Portfolio = (function($) {
 
         _.each(album.content, function(media) {
             var html = '<a class="image opacity-hover" href="' + media.url + '">';
-            html += '<div class="img-border"><img';
+            html += '<div class="img-border"><img data-no-retina';
             html += ' src="' + media.thumbnail + '"></div>';
             html += '</a>';
 
@@ -121,8 +121,8 @@ var Portfolio = (function($) {
             duration: 600
         };
 
-        renderThumbnails().then(initEventHandlers);
         animate();
+        return renderThumbnails().then(initEventHandlers);
     }
 
     return {
