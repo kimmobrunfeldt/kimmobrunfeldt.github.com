@@ -135,4 +135,5 @@ var Portfolio = (function($) {
 // On load
 $(function() {
     Portfolio.init();
+    console.debug('The code is ok-ish.. Also check https://github.com/kimmobrunfeldt')
 });
