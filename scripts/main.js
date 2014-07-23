@@ -138,7 +138,7 @@ $(function() {
 
     setTimeout(function hello() {
         console.debug('\n\nHi!\n');
-        console.debug('The code is ok-ish.. Also check https://github.com/kimmobrunfeldt');
+        console.debug('The code in this portfolio is ok-ish.. Please check https://github.com/kimmobrunfeldt for hopefully better code :)');
     }, 2000);
 
 });
